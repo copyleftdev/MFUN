@@ -1,13 +1,13 @@
 import unittest
 from selenium import webdriver
 import pages.FunnelsPO as Fpo
-import rollbar
+
 
 
 
 class MetroFaxTestSuite(unittest.TestCase):
 
-    rollbar.init('0ee232063e624252aac3621bee9d3b01')
+
 
     def setUp(self):
         self.base_url = "https://qaorigin.metrofax.com"
@@ -17,12 +17,26 @@ class MetroFaxTestSuite(unittest.TestCase):
 
 
     def tearDown(self):
-        self.driver.quit()
+        pass
 
+    @unittest.skip("Debug mode")
     def test_buy_now_funnel_signup(self):
-        self.workflow.buynow_funnel_signup(cn='United States', ptype=2)
-        self.workflow.populate_email_element()
-        self.workflow.populate_billing_elements("United States", "California")
+        self.workflow.funnel_signup(cn='United States',
+                                    sn="California", ptype=5,
+                                    route="/buy-now/fax-numbers")
+        self.workflow.populate_email_element("/buy-now/account-setup")
+        self.workflow.populate_billing_elements("United States",
+                                                "California",
+                                                "/Buy-Now/Billing-Info")
+
+    def test_free_trial_funnel_signup(self):
+        self.workflow.funnel_signup(cn='United States',
+                                    sn="California",
+                                    route="/free-trial/fax-numbers")
+        self.workflow.populate_email_element(route="/free-trial/account-setup")
+        self.workflow.populate_billing_elements(cn="United States",
+                                                sn="California",
+                                                route="/free-trial/Billing-Info")
 
 if __name__ == "__main__":
     unittest.main()

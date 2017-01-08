@@ -19,8 +19,8 @@ class FunnelPageObjects(BasePageElement):
         self.f = Factory.create()
         self.wait = WebDriverWait(self.driver, 100)
 
-    def buynow_funnel_signup(self, cn, sn=None, ptype=1):
-        self.driver.get(self.base_url + "/buy-now/fax-numbers")
+    def funnel_signup(self, cn, sn=None, ptype=None, route=None):
+        self.driver.get(self.base_url + route)
         country = self.driver.find_element(*Fl.COUNTRYDDL)
         state = self.driver.find_element(*Fl.STATEDDL)
         areacode = self.driver.find_element(*Fl.AREACODEDDL)
@@ -102,13 +102,21 @@ class FunnelPageObjects(BasePageElement):
             self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME,
                                                         "btnprofessional")))
         else:
-            return "{} invalid value for ptype".format(ptype)
+            pass
         # ----------------------------------------------------------------------
 
-        nextb.click()
+        try:
+            nextb.click()
+        except UnboundLocalError as e:
+            self.wait.until(EC.element_to_be_clickable((By.CLASS_NAME,
+                                                        "agreement")))
+            nextb = self.driver.find_element(*Fl.BILL_NEXT_BTN)
+            nextb.click()
 
-    def populate_email_element(self):
-        self.driver.get(self.base_url + "/buy-now/account-setup")
+
+
+    def populate_email_element(self, route=None):
+        self.driver.get(self.base_url + route)
         email = self.driver.find_element(*Fl.EMAIL_INPT)
         self.wait.until(EC.presence_of_element_located((By.CLASS_NAME,
                                                         "email")))
@@ -121,8 +129,8 @@ class FunnelPageObjects(BasePageElement):
 
 
 
-    def populate_billing_elements(self, cn, sn, ctype="visa16"):
-        self.driver.get(self.base_url + "/Buy-Now/Billing-Info")
+    def populate_billing_elements(self, cn, sn, ctype="visa16", route=None):
+        self.driver.get(self.base_url + route)
         fname = self.driver.find_element(*Fl.FNAME_INPT)
         lname = self.driver.find_element(*Fl.LNAME_INPT)
         company = self.driver.find_element(*Fl.COMPANY_NAME_INPT)
@@ -134,7 +142,8 @@ class FunnelPageObjects(BasePageElement):
         ccname = self.driver.find_element(*Fl.CARD_HOLDER_INPT)
         ccnum = self.driver.find_element(*Fl.CC_NUM_INPT)
         cvv = self.driver.find_element(*Fl.CVV_INPT)
-
+        agreement = self.driver.find_element(*Fl.AGREEMENT_INPT)
+        nextbtn = self.driver.find_element(*Fl.BILL_NEXT_BTN)
         # Drop-Downs
         # ---------------------------------------------------------------------
         country = self.driver.find_element(*Fl.BILL_COUNTRY_DDL)
@@ -170,7 +179,18 @@ class FunnelPageObjects(BasePageElement):
         zipcode.send_keys(self.f.zipcode())
         ccnum.send_keys("4133738662043055")
         cvv.send_keys("123")
+        agreement.click()
+        nextbtn.click()
+
+
 
 
     def assert_success_elements(self):
-        pass
+        self.driver.get(self.base_url + "/buy-now/signup-success")
+        self.wait.until(EC.presence_of_element_located((By.ID,
+                                                    "paidsignup_periodicFee")))
+        monthly_fee = self.driver.find_element(*Fl.OC_MONTHLY_FEE)
+        activation_fee = self.driver.find_element(*Fl.OC_ACTIVATION_FEE)
+        pages = self.driver.find_element(*F1.OC_INCLUDED_PAGES)
+        fax_num = self.driver.find_element(*Fl.OC_PHONE_NUMBER)
+        fax_pin = self.driver.find_element(*F1.OC_PIN)

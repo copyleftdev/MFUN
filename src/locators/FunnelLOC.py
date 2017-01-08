@@ -41,3 +41,8 @@ class FunnelLocs(object):
     NORTON_IMG = (By.XPATH, "//img[contains(@src, 'norton')]")
     MCAFEE_IMG = (By.XPATH, "//img[contains(@src, 'mcafee')]")
     ALERT_NO_INVENTORY = (By.ID, "noInventory")
+    OC_MONTHLY_FEE = (By.ID, "paidsignup_periodicFee")
+    OC_ACTIVATION_FEE = (By.ID, "paidsignup_activationFee")
+    OC_INCLUDED_PAGES = (By.ID, "paidsignup_FreePages")
+    OC_PHONE_NUMBER = (By.XPATH, '//strong[contains(text(),"Your Number:")]')
+    OC_PIN = (By.XPATH, '//strong[contains(text(),"Your PIN:")]')

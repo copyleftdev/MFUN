@@ -1,0 +1,38 @@
+1483828857228	geckodriver	INFO	Listening on 127.0.0.1:49904
+1483828858159	mozprofile::profile	INFO	Using profile path /var/folders/_x/t7skm_h57rb721tp0jjxnhk40000gn/T/rust_mozprofile.sWxXfds08atD
+1483828858162	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1483828858180	geckodriver::marionette	INFO	Connecting to Marionette on localhost:49917
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1483828858774	Marionette	INFO	Listening on port 49917
+1483828859777	Marionette	INFO	startBrowser 88d9c899-baeb-1c44-9251-b4d8d305ca7c
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 1389] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+[Child 1389] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+1483828923936	geckodriver	INFO	Listening on 127.0.0.1:50199
+1483828924896	mozprofile::profile	INFO	Using profile path /var/folders/_x/t7skm_h57rb721tp0jjxnhk40000gn/T/rust_mozprofile.RI6yWsOlQAUI
+1483828924898	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1483828924901	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50212
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1483828925367	Marionette	INFO	Listening on port 50212
+1483828926294	Marionette	INFO	startBrowser 4bd58676-439b-9846-a387-2bfc486bfe72
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+[Child 1402] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+[Child 1402] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+1483828942144	geckodriver	INFO	Listening on 127.0.0.1:50382
+1483828943102	mozprofile::profile	INFO	Using profile path /var/folders/_x/t7skm_h57rb721tp0jjxnhk40000gn/T/rust_mozprofile.LeSqINmxBgiD
+1483828943104	geckodriver::marionette	INFO	Starting browser /Applications/Firefox.app/Contents/MacOS/firefox-bin
+1483828943107	geckodriver::marionette	INFO	Connecting to Marionette on localhost:50395
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+1483828943571	Marionette	INFO	Listening on port 50395
+1483828944468	Marionette	INFO	startBrowser bc67f5f5-19e1-cf49-b43f-8d5179f34990
+[warn] kq_init: detected broken kqueue; not using.: Undefined error: 0
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+JavaScript error: https://qasf.metrofax.com/j2bundle/Embedded/MetrofaxJs?v=X8k7PBCdPVIe2HtRuw4tcP-gXmog5omaMhvZDRp9uP41, line 1: ReferenceError: language is not defined
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+[Child 1408] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
+[Child 1408] ###!!! ABORT: Aborting on channel error.: file /builds/slave/m-rel-m64-00000000000000000000/build/src/ipc/glue/MessageChannel.cpp, line 2052
